@@ -1,0 +1,35 @@
+@use "../../app.scss" as *;
+
+.slide {
+  position: relative;
+  & .previous,
+  & .next {
+    position: absolute;
+    background-color: white;
+    width: 40px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    top: 50%;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: map-get($map: $colors, $key: "very-dark-blue");
+
+    &:hover {
+      color: map-get($map: $font-colors, $key: "orange");
+    }
+  }
+
+  & .previous {
+    left: 1rem;
+  }
+  & .next {
+    right: 1rem;
+  }
+  & .slides-container {
+    display: flex;
+    min-width: 100vw;
+    transition: all ease-in-out 0.5s;
+  }
+}

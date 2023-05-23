@@ -1,0 +1,7 @@
+.cart-btn {
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.5;
+    box-shadow: 5px 8px 5px hsla(26, 100%, 55%, 0.3);
+  }
+}

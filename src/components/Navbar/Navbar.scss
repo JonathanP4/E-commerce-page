@@ -1,0 +1,28 @@
+.nav {
+  transition: all 0.3s;
+  & img,
+  & svg {
+    display: inline;
+    cursor: pointer;
+  }
+  .avatar {
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: transparent;
+    transition: all 0.2s;
+
+    &:hover {
+      border-color: hsl(26, 100%, 55%);
+    }
+  }
+  .cart-icon-container {
+    transition: all 0.3s;
+    color: hsl(219, 9%, 45%);
+    &:hover {
+      color: hsl(220, 13%, 13%);
+    }
+    & svg {
+      fill: currentColor;
+    }
+  }
+}

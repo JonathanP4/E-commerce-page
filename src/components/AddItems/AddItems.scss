@@ -1,0 +1,10 @@
+.add-items {
+  & img {
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

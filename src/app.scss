@@ -1,0 +1,29 @@
+$colors: (
+  "very-dark-blue": hsl(220, 13%, 13%),
+  "grayish-blue": hsl(220, 14%, 75%),
+);
+
+$font-colors: (
+  "orange": hsl(26, 100%, 55%),
+  "black": hsl(0, 0%, 0%),
+  "dark-grayish-blue": hsl(219, 9%, 45%),
+  "white": hsl(0, 0%, 100%),
+);
+
+$bg-colors: (
+  "orange": hsl(26, 100%, 55%),
+  "pale orange": hsl(25, 100%, 94%),
+  "light-grayish-blue": hsl(223, 64%, 98%),
+  "white": hsl(0, 0%, 100%),
+);
+
+// @each $key, $val in $font-colors {
+//   .txt-#{$key} {
+//     color: $val;
+//   }
+// }
+// @each $key, $val in $bg-colors {
+//   .bg-#{$key} {
+//     background-color: $val;
+//   }
+// }
