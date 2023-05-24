@@ -16,14 +16,3 @@ $bg-colors: (
   "light-grayish-blue": hsl(223, 64%, 98%),
   "white": hsl(0, 0%, 100%),
 );
-
-// @each $key, $val in $font-colors {
-//   .txt-#{$key} {
-//     color: $val;
-//   }
-// }
-// @each $key, $val in $bg-colors {
-//   .bg-#{$key} {
-//     background-color: $val;
-//   }
-// }

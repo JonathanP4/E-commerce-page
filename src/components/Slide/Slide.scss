@@ -1,0 +1,17 @@
+.splide__arrows {
+  & .splide__arrow {
+    background: white;
+    transition: all 0.3s;
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    &:hover {
+      color: hsl(26, 100%, 55%);
+    }
+
+    & svg {
+      width: 1rem;
+      fill: currentColor;
+    }
+  }
+}

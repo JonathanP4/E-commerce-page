@@ -1,0 +1,18 @@
+.mobile-nav {
+  animation: hide 0.3s forwards;
+  & li {
+    transition: color 0.3s;
+    &:hover {
+      color: hsl(26, 100%, 55%);
+    }
+  }
+}
+
+@keyframes show {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
