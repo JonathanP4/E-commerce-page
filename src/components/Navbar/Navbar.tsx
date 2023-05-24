@@ -7,15 +7,14 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
+
   function showMobileNav() {
     setShowNav(true);
   }
-  function hideMobileNav() {
-    setShowNav(false);
-  }
+
   return (
     <>
-      {showNav && <MobileNav clickEvent={hideMobileNav} />}
+      <MobileNav setState={setShowNav} showNav={showNav} />
       <nav className="nav flex items-center justify-between p-5">
         <div>
           <img onClick={showMobileNav} src={menuIcon} alt="menu" />

@@ -1,5 +1,5 @@
 .mobile-nav {
-  animation: hide 0.3s forwards;
+  transition: all 0.3s;
   & li {
     transition: color 0.3s;
     &:hover {
@@ -8,11 +8,6 @@
   }
 }
 
-@keyframes show {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+.hide-nav {
+  transform: translateX(-100%);
 }
