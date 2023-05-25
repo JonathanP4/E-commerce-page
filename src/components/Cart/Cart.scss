@@ -1,0 +1,12 @@
+.cart-popup {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+  & .divider {
+    height: 1px;
+    width: 100%;
+  }
+
+  & .cart-items-container {
+    min-height: 10rem;
+  }
+}

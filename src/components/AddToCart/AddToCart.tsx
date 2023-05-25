@@ -1,11 +1,11 @@
-import './AddToCart.scss'
+import Button from "../Button/Button";
+import "./AddToCart.scss";
 
-export default function AddToCart(props: { className?: string }) {
+export default function AddToCart(props: { clickEvent: () => void }) {
   return (
-    <a
-      href="#"
-      className="cart-btn font-bold p-4 gap-4 rounded-xl flex justify-center
-      items-center bg-orange-500 text-white w-full"
+    <Button
+      clickEvent={props.clickEvent}
+      className="flex items-center justify-center gap-4"
     >
       <svg
         className="inline"
@@ -20,6 +20,6 @@ export default function AddToCart(props: { className?: string }) {
         />
       </svg>
       Add to cart
-    </a>
+    </Button>
   );
 }
