@@ -18,24 +18,21 @@ export default function Product(props: {
   const { details } = props;
   const oldPrice = intlFormatNum.format(details.old_price);
   const price = intlFormatNum.format(details.price);
-  const { increase, decrease, count } = useCount(0);
+  const { increase, decrease, count, setCount } = useCount(0);
 
   function addToCart() {
     if (count < 1) {
-      console.log("not doing it");
       return;
     }
-    ctx.add(
-      {
-        thumbnail: "/images/image-product-1-thumbnail.jpg",
-        name: details.title,
-        price: details.price,
-        old_price: details.old_price,
-        quantity: count,
-        id: ctx.items.length,
-      },
-      "ADD"
-    );
+    setCount(0);
+    ctx.add({
+      thumbnail: "/images/image-product-1-thumbnail.jpg",
+      name: details.title,
+      price: details.price,
+      old_price: details.old_price,
+      quantity: count,
+      id: ctx.items.length,
+    });
   }
 
   return (

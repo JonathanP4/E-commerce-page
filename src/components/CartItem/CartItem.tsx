@@ -2,10 +2,18 @@ import { intlFormatNum } from "../../helpers/number-format";
 import { CartItemType } from "../Cart/Cart";
 import deleteIcon from "/images/icon-delete.svg";
 import "./CartItem.scss";
+import { useContext } from "react";
+import { cartContext } from "../../context/cart-context";
 
 export default function CartItem(props: { item: CartItemType }) {
   const { item } = props;
+  const total = intlFormatNum.format(item.price * item.quantity);
   const price = intlFormatNum.format(item.price);
+  const ctx = useContext(cartContext);
+
+  function deleteItem() {
+    ctx.remove(item.id);
+  }
 
   return (
     <div className="item">
@@ -15,8 +23,14 @@ export default function CartItem(props: { item: CartItemType }) {
         <span>
           {price} x {item.quantity}
         </span>
+        <span className="ml-2 text-black font-bold">{total}</span>
       </div>
-      <img src={deleteIcon} alt="delete item" />
+      <img
+        className="cursor-pointer"
+        onClick={deleteItem}
+        src={deleteIcon}
+        alt="delete item"
+      />
     </div>
   );
 }

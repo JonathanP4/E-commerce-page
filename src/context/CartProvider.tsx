@@ -4,10 +4,21 @@ import { CartItemType } from "../components/Cart/Cart";
 
 function reducer(
   state: CartItemType[],
-  action: { payload: CartItemType; type: "ADD" | "REMOVE" }
+  action: { payload?: CartItemType; type: "ADD" | "REMOVE"; id?: number }
 ) {
-  if (action.type === "ADD") {
+  if (action.type === "ADD" && action.payload) {
+    const exists = state.findIndex(
+      (item) => item.name === action.payload?.name
+    );
+    if (exists !== -1) {
+      console.log(action.payload.quantity);
+      state[exists].quantity += action.payload.quantity;
+      return [...state];
+    }
     return [...state, action.payload];
+  } else if (action.type === "REMOVE") {
+    const updatedState = state.filter((item) => item.id !== action.id);
+    return updatedState;
   } else {
     return state;
   }
@@ -21,8 +32,8 @@ export default function CartProvider(props: { children: ReactNode }) {
   function add(item: CartItemType) {
     dispatch({ payload: item, type: "ADD" });
   }
-  function remove() {
-    dispatch("REMOVE");
+  function remove(id: number) {
+    dispatch({ type: "REMOVE", id });
   }
 
   const initialValue = {

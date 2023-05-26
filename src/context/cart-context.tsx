@@ -5,10 +5,10 @@ const init: CartItemType[] = [];
 
 export const cartContext = createContext({
   items: init,
-  add: (item: CartItemType, action: "ADD" | "REMOVE") => {
-    return item;
+  add: (item: CartItemType) => {
+    return;
   },
-  remove: (b: any) => {
-    return b;
+  remove: (id: number) => {
+    return;
   },
 });

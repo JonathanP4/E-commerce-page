@@ -9,5 +9,6 @@ export default function useCount(n: number) {
     increase,
     decrease,
     count,
+    setCount,
   };
 }
