@@ -1,0 +1,11 @@
+.desktop-nav {
+  & li {
+    padding: 2rem 0;
+    transition: border-bottom 0.2s ease-in;
+    border-bottom: 4px solid transparent;
+
+    &:hover {
+      border-bottom: 4px solid hsl(26, 100%, 55%);
+    }
+  }
+}

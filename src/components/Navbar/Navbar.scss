@@ -1,5 +1,11 @@
 .nav {
   transition: all 0.3s;
+  max-width: 1100px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    border-bottom: 1px solid hsla(220, 14%, 75%, 0.5);
+  }
+
   & img,
   & svg {
     display: inline;
@@ -20,6 +26,13 @@
     color: hsl(219, 9%, 45%);
     &:hover {
       color: hsl(220, 13%, 13%);
+    }
+    & span {
+      font-size: 10px;
+      padding: 0 6px;
+      position: absolute;
+      right: -6px;
+      top: -3px;
     }
     & svg {
       fill: currentColor;

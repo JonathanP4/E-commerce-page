@@ -3,14 +3,53 @@ import img2 from "/images/image-product-2.jpg";
 import img3 from "/images/image-product-3.jpg";
 import img4 from "/images/image-product-4.jpg";
 
+import thumbnail1 from "/images/image-product-1-thumbnail.jpg";
+import thumbnail2 from "/images/image-product-2-thumbnail.jpg";
+import thumbnail3 from "/images/image-product-3-thumbnail.jpg";
+import thumbnail4 from "/images/image-product-4-thumbnail.jpg";
+const images = [thumbnail1, thumbnail2, thumbnail3, thumbnail4];
+
 import "./Slide.scss";
 import "@splidejs/react-splide/css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useState } from "react";
 
-export default function Slide() {
+export default function Slide(props: { className?: string }) {
+  function changeArrows(splide: any) {
+    console.log(splide);
+    splide.Components.Pagination.items.forEach((item: any, i: number) => {
+      item.button.innerHTML = `<img src="${images[i]}" alt="thumbnail-${i}"/>`;
+    });
+  }
+
+  const [isMobile, setIsMobile] = useState(true);
+
+  const io = new ResizeObserver((el) => {
+    const [element] = el;
+    const width = element.contentBoxSize[0].inlineSize;
+
+    if (width > 1048) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  });
+
+  io.observe(document.body);
+
   return (
-    <>
-      <Splide options={{ type: "loop", pagination: false, autoplay: true }}>
+    <div className={props.className || ""}>
+      <Splide
+        onPaginationMounted={changeArrows}
+        options={{
+          type: "loop",
+          pagination: !isMobile,
+          autoplay: true,
+          classes: {
+            pagination: "splide__pagination--custom",
+          },
+        }}
+      >
         <SplideSlide>
           <img src={img1} alt="image 1" />
         </SplideSlide>
@@ -50,6 +89,6 @@ export default function Slide() {
           </button>
         </div>
       </Splide>
-    </>
+    </div>
   );
 }

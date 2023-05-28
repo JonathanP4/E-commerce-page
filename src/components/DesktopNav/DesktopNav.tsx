@@ -1,0 +1,23 @@
+import "./DesktopNav.scss";
+
+export default function DesktopNav() {
+  return (
+    <ul className="ml-6 items-center desktop-nav flex gap-4 list-none text-gray-400">
+      <li>
+        <a href="#">Collections</a>
+      </li>
+      <li>
+        <a href="#">Men</a>
+      </li>
+      <li>
+        <a href="#">Women</a>
+      </li>
+      <li>
+        <a href="#">About</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+  );
+}

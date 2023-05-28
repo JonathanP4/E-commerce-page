@@ -1,5 +1,16 @@
 .cart-popup {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1rem 2rem hsla(0, 0%, 0%, 0.2);
+  animation: pop 0.2s forwards;
+  transform: translate(10%);
+  top: 6rem;
+  left: 1rem;
+  right: 1rem;
+
+  @media (min-width: 768px) {
+    right: 4rem;
+    left: unset;
+    width: 350px;
+  }
 
   & .divider {
     height: 1px;
@@ -8,5 +19,17 @@
 
   & .cart-items-container {
     min-height: 10rem;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(105%);
+  }
+  100% {
+    transform: scale(100%);
   }
 }

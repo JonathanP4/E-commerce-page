@@ -17,7 +17,7 @@ export default function Cart() {
   const cartState = useContext(cartContext);
 
   return (
-    <div className="rounded-xl cart-popup absolute top-24 left-4 right-4 grid bg-white z-20">
+    <div className="rounded-xl cart-popup absolute grid bg-white z-20">
       <h3 className="font-bold p-5">Cart</h3>
       <div className="divider bg-gray-200"></div>
       <div className="cart-items-container text-gray-500 p-5 grid gap-4">

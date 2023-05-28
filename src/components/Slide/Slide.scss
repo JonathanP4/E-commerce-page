@@ -1,4 +1,7 @@
 .splide__arrows {
+  @media (min-width: 1048px) {
+    display: none;
+  }
   & .splide__arrow {
     background: white;
     transition: all 0.3s;
@@ -13,5 +16,43 @@
       width: 1rem;
       fill: currentColor;
     }
+  }
+}
+.splide__pagination--custom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+
+  & img {
+    border-radius: 0.6rem;
+  }
+
+  & button {
+    width: 83px;
+    height: 0;
+    margin: 0;
+  }
+
+  & .splide__pagination__page {
+    opacity: 1;
+  }
+
+  & li {
+    border: 3px solid transparent;
+    height: 86px;
+    border-radius: 0.7rem;
+    padding: 0;
+    margin: 0;
+    transition: border-color 150ms;
+  }
+
+  & li:has(.is-active) {
+    border-color: hsl(26, 100%, 55%);
+  }
+
+  & .splide__pagination__page.is-active {
+    opacity: 0.5;
+    transition: opacity ease-out 150ms;
+    transform: scale(1);
   }
 }
