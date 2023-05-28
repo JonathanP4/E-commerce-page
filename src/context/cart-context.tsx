@@ -6,9 +6,11 @@ const init: CartItemType[] = [];
 export const cartContext = createContext({
   items: init,
   add: (item: CartItemType) => {
+    item;
     return;
   },
   remove: (id: number) => {
+    id;
     return;
   },
 });

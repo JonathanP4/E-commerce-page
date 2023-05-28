@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar/Navbar";
 import "./app.scss";
 import Product from "./components/Product/Product";
-import Cart from "./components/Cart/Cart";
 import CartProvider from "./context/CartProvider";
 
 const details = {
@@ -17,7 +16,6 @@ function App() {
   return (
     <main>
       <CartProvider>
-        <Cart />
         <Navbar />
         <Product details={details} />
       </CartProvider>

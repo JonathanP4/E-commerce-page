@@ -5,7 +5,7 @@ export default function AddToCart(props: { clickEvent: () => void }) {
   return (
     <Button
       clickEvent={props.clickEvent}
-      className="flex items-center justify-center gap-4"
+      className="cart-btn flex items-center justify-center gap-4"
     >
       <svg
         className="inline"
